@@ -1,13 +1,12 @@
 // server.js
 
 import express from 'express';
-
-// ✅ Use CommonJS require for cors (fixes ESM + CJS compatibility)
 import { createRequire } from 'module';
 const require = createRequire(import.meta.url);
-const cors = require('cors');
 
-import dotenv from 'dotenv';
+const cors = require('cors');
+const dotenv = require('dotenv');
+
 import OpenAI from 'openai';
 
 dotenv.config();
@@ -34,7 +33,7 @@ app.post('/api/explain', async (req, res) => {
 
   try {
     const completion = await openai.chat.completions.create({
-      model: 'openai/gpt-3.5-turbo', // using free & supported model
+      model: 'openai/gpt-3.5-turbo',
       messages: [
         { role: 'system', content: 'You are a helpful assistant that explains code clearly and concisely.' },
         { role: 'user', content: `Explain this code:\n${code}` },
