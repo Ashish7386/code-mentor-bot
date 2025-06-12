@@ -1,5 +1,12 @@
+// server.js
+
 import express from 'express';
-import cors from 'cors';
+
+// ✅ Use CommonJS require for cors (fixes ESM + CJS compatibility)
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
+const cors = require('cors');
+
 import dotenv from 'dotenv';
 import OpenAI from 'openai';
 
