@@ -22,7 +22,7 @@ const openai = new OpenAI({
   baseURL: 'https://openrouter.ai/api/v1',
 });
 
-console.log("API Key:", process.env.OPENROUTER_API_KEY); // Debugging check
+//console.log("API Key:", process.env.OPENROUTER_API_KEY); // Debugging check
 
 app.post('/api/explain', async (req, res) => {
   const { code } = req.body;
