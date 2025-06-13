@@ -1,5 +1,3 @@
-// server.js
-
 import express from 'express';
 import { createRequire } from 'module';
 const require = createRequire(import.meta.url);
@@ -17,12 +15,13 @@ const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
+// OpenRouter API client setup
 const openai = new OpenAI({
   apiKey: process.env.OPENROUTER_API_KEY,
   baseURL: 'https://openrouter.ai/api/v1',
 });
 
-//console.log("API Key:", process.env.OPENROUTER_API_KEY); // Debugging check
+const model = process.env.OPENROUTER_MODEL; // Model from .env
 
 app.post('/api/explain', async (req, res) => {
   const { code } = req.body;
@@ -33,7 +32,7 @@ app.post('/api/explain', async (req, res) => {
 
   try {
     const completion = await openai.chat.completions.create({
-      model: 'openai/gpt-3.5-turbo',
+      model: model, // dynamic model
       messages: [
         { role: 'system', content: 'You are a helpful assistant that explains code clearly and concisely.' },
         { role: 'user', content: `Explain this code:\n${code}` },
