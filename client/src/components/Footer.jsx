@@ -19,7 +19,7 @@ const Footer = () => {
           <a href="#" target="_blank" rel="noopener noreferrer" className="hover:scale-125 transform transition duration-300">
             <FaGithub size={24} />
           </a>
-          <a href="#" target="_blank" rel="noopener noreferrer" className="hover:scale-125 transform transition duration-300">
+          <a href="https://www.linkedin.com/in/ashishreddy2310/" target="_blank" rel="noopener noreferrer" aria-label="Visit my LinkedIn profile" className="hover:scale-125 transform transition duration-300">
             <FaLinkedin size={24} />
           </a>
           <a href="#" target="_blank" rel="noopener noreferrer" className="hover:scale-125 transform transition duration-300">
