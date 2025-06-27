@@ -26,7 +26,7 @@ const HowItWorks = () => {
       id="howitworks"
       className="scroll-mt-96 pt-20 pb-24 px-4 mb-80 max-w-6xl mx-auto text-center"
     >
-      <p className="scroll-mt-96 pt-20 pb-2 text-sm text-gray-400 mb-2">A product by AnyaLabs</p>
+      <p className="scroll-mt-96 pt-20 pb-2 text-sm text-gray-400 mb-2">A product by Aanya Labs</p>
       <h2 className="text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent mb-10">
         How Nexora Works
       </h2>

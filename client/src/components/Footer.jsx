@@ -13,7 +13,7 @@ const Footer = () => {
         className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between px-4"
       >
         <div className="text-center md:text-left">
-          <p className="text-sm text-gray-300">&copy; {new Date().getFullYear()} Nexora — A product by AnyaLabs. All rights reserved.</p>
+          <p className="text-sm text-gray-300">&copy; {new Date().getFullYear()} Nexora — A product by Aanya Labs. All rights reserved.</p>
         </div>
         <div className="flex space-x-6 mt-4 md:mt-0">
           <a href="#" target="_blank" rel="noopener noreferrer" className="hover:scale-125 transform transition duration-300">

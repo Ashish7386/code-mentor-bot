@@ -32,14 +32,14 @@ const Contact = () => {
           className="flex items-center justify-center gap-3 bg-white/10 backdrop-blur-md border border-purple-500 hover:bg-purple-600/30 text-white py-4 px-6 rounded-2xl shadow-xl transition-transform transform hover:scale-105"
         >
           <Mail className="w-6 h-6" />
-          contact@anyalabs.com
+          bluacad@gmail.com
         </a>
         <a
-          href="tel:+1234567890"
+          href="tel:+919493573861"
           className="flex items-center justify-center gap-3 bg-white/10 backdrop-blur-md border border-pink-500 hover:bg-pink-600/30 text-white py-4 px-6 rounded-2xl shadow-xl transition-transform transform hover:scale-105"
         >
           <Phone className="w-6 h-6" />
-          +1 234 567 890
+          +91 94935 73861
         </a>
       </motion.div>
     </div>

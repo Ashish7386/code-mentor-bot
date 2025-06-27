@@ -10,7 +10,7 @@ const About = () => {
         a professional debugging complex systems, Nexora is here to assist.
       </p>
       <p className="text-lg text-purple-100 leading-relaxed mt-4 text-center">
-        <span className="font-semibold text-white">A product by AnyaLabs</span>,
+        <span className="font-semibold text-white">A product by Aanya Labs</span>,
         Nexora embodies elegance in functionality, ensuring developers enjoy a
         smooth and delightful experience with every line of code they write.
       </p>

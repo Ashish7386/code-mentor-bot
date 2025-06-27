@@ -22,7 +22,7 @@ const Hero = () => {
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 1 }}
       >
-        A Product by AnyaLabs
+        A Product by Aanya Labs
       </motion.p>
 
       <motion.p
