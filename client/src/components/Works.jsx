@@ -1,12 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import CodeEditor from "./CodeEditor";
 import { Loader2 } from "lucide-react";
+import { Typewriter } from "react-simple-typewriter";
 
 const Works = () => {
   const [code, setCode] = useState("");
   const [explanation, setExplanation] = useState("");
   const [loading, setLoading] = useState(false);
+
+  // 🔁 Restore last code from localStorage
+  useEffect(() => {
+    const savedCode = localStorage.getItem("last_code");
+    if (savedCode) setCode(savedCode);
+  }, []);
+
+  // 💾 Save code to localStorage on change
+  useEffect(() => {
+    localStorage.setItem("last_code", code);
+  }, [code]);
 
   const handleExplain = async () => {
     if (!code.trim()) {
@@ -44,14 +56,19 @@ const Works = () => {
   return (
     <div
       id="works"
-      className="scroll-mt-128 mb-40 max-w-4xl mx-auto p-6 bg-gradient-to-br from-gray-800 via-gray-900 to-black rounded-2xl shadow-2xl backdrop-blur-md"
+      className="scroll-mt-128 mb-40 max-w-4xl mx-auto p-6 bg-gradient-to-br from-gray-800 via-gray-900 to-black rounded-2xl shadow-2xl backdrop-blur-md transition-all duration-500 font-poppins"
     >
       <h1 className="pt-20 pb-2 text-4xl font-bold mb-6 text-center text-white">
         Nexora Code Explainer
       </h1>
 
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8 }}>
-        <CodeEditor code={code} setCode={setCode} />
+        <CodeEditor
+          code={code}
+          setCode={setCode}
+          explanation={explanation}
+          setExplanation={setExplanation}
+        />
         <button
           onClick={handleExplain}
           className="mt-6 w-full bg-gradient-to-r from-purple-600 to-pink-500 text-white py-3 px-4 rounded-xl shadow-xl hover:scale-105 active:scale-95 transition-transform duration-300"
@@ -71,10 +88,12 @@ const Works = () => {
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6 }}
-          className="mt-6 p-5 bg-white/10 text-purple-100 rounded-xl shadow-lg border border-purple-500"
+          className="mt-6 p-5 bg-white/10 text-purple-100 rounded-xl shadow-lg border border-purple-500 font-medium transition-all duration-300"
         >
           <h2 className="font-semibold mb-3 text-lg">Explanation:</h2>
-          <p className="leading-relaxed whitespace-pre-wrap">{explanation}</p>
+          <p className="leading-relaxed whitespace-pre-wrap">
+            <Typewriter words={[explanation]} typeSpeed={30} />
+          </p>
         </motion.div>
       )}
     </div>
